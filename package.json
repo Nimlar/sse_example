@@ -1,0 +1,8 @@
+{
+  "name": "test-pubsub",
+  "version": "1.0.0",
+  "dependencies": {
+    "mubsub": "^1.0.4",
+    "restify": "^3.0.2"
+  }
+}

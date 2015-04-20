@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>SSEs, Node.js, and Redis</title>
+		<link rel="stylesheet" href="/stylesheets/style.css"/>
+	</head>
+	<body>
+		<h1>Pub/Sub Updates</h1>
+		<ul class="data"></ul>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"> </script>
+		<script type="text/javascript">var source = new EventSource('/sse');
+			source.addEventListener('message', function(e) {
+					console.log(e);
+					$('ul').append('<li>' + e.data + ' (message id: ' + e.lastEventId + ')</li>');
+					}, false);
+</script>
+</body>
+</html>
